@@ -15,14 +15,13 @@
   --light-grey-bg-color: #f5f4fa;
   --light-bg-color: #ffffff;
   --icon-bg-color: #ffffff;
-  --footer-bg-color: #2F303A;
+  --footer-bg-color: #2f303a;
 
   /* Other */
   --border-color: #eeeeee;
-  --icon-border-color: #AFB1B8;
-  --icon-color: #AFB1B8;
- 
-  
+  --icon-border-color: #afb1b8;
+  --icon-color: #afb1b8;
+  --anim-main: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .container {
@@ -35,7 +34,6 @@
 /* BODY */
 
 .page {
-
   font-family: var(--main-font);
   color: var(--main-txt-color);
 }
@@ -112,11 +110,34 @@ address {
   align-items: center;
 }
 
-.link-nav {
-  display: flex;
+.link-nav,
+.menu-link {
+  position: relative;
+  display: block;
   padding-top: 32px;
   padding-bottom: 32px;
   align-items: center;
+
+  transition: var(--anim-main);
+}
+
+.menu-link {
+  color: var(--accent-txt-color);
+}
+
+.menu-link::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+
+  background-color: var(--accent-bg-color);
+  border-radius: 2px;
 }
 
 .header,
@@ -128,19 +149,18 @@ address {
   color: var(--main-txt-color);
 }
 
-.icon{
+.icon {
   color: var(--grey-txt-color);
 }
 
-.icon:hover{
+.icon:hover {
   color: var(--accent-txt-color);
 }
 
-.nav-icon{
+.nav-icon {
   margin-right: 10px;
 
   fill: currentColor;
-
 }
 
 .header .link:hover,
@@ -175,25 +195,19 @@ address {
 */
 
 .hero {
-  background: #C4C4C4;
-  max-width: 1600px;;
+  background: #c4c4c4;
+  max-width: 1600px;
   height: 600px;
   margin-left: auto;
   margin-right: auto;
 
-  background-image: linear-gradient(
-    to right,
-    rgba(47, 48, 58, 0.4),
-    rgba(47, 48, 58, 0.4)
-    ),
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/fon.jpg);
   background-size: cover;
   background-position: center;
   padding-top: 200px;
   padding-bottom: 200px;
 }
-
-
 
 .caption {
   width: 696px;
@@ -236,14 +250,47 @@ address {
   cursor: pointer;
 }
 
+/**
+  |============================
+  | Модальне вікно
+  |============================
+*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 528px;
+  height: 581px;
+
+  background: var(--light-bg-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-btn {
+}
+
 .feature-content {
   margin: 0;
   padding: 0;
   padding-top: 94px;
   padding-bottom: 94px;
 }
-
-
 
 #hidden {
   display: block;
@@ -258,20 +305,18 @@ address {
 
 .feature-item {
   width: 270px;
-  
 }
 
-.feature-icon{
+.feature-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 270px;
   height: 120px;
-  background: #F5F4FA;
+  background: #f5f4fa;
   border-radius: 4px;
   margin-bottom: 30px;
 }
-
 
 .features {
   margin-bottom: 10px;
@@ -313,14 +358,12 @@ address {
 
 .team-section {
   background-color: var(--light-grey-bg-color);
-  
+
   margin-left: auto;
   margin-right: auto;
   padding-top: 94px;
   padding-bottom: 94px;
 }
-
-
 
 .team-list {
   display: flex;
@@ -335,7 +378,7 @@ address {
   border-radius: 0px 0px 4px 4px;
 }
 
-.team{
+.team {
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -362,20 +405,20 @@ address {
 
 /* TEAM ICON */
 
-.our-team-list{
+.our-team-list {
   display: flex;
   justify-content: center;
   gap: 10px;
-  
 }
 
-.team-link{
+.team-link {
   display: flex;
   align-items: center;
   justify-content: center;
 
   width: 44px;
   height: 44px;
+  transition: var(--anim-main);
 
   color: var(--icon-color);
   background-color: var(--icon-bg-color);
@@ -383,18 +426,16 @@ address {
 }
 
 .team-link:hover,
-.team-link:focus{
+.team-link:focus {
   color: var(--light-txt-color);
   background-color: var(--accent-bg-color);
 }
 
-.team-icon{
+.team-icon {
   fill: currentColor;
 }
 
-
-
-.section-customers{
+.section-customers {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -402,8 +443,7 @@ address {
   padding-bottom: 94px;
 }
 
-.customers{
-
+.customers {
   font-weight: 700;
   font-size: 36px;
   line-height: 42px;
@@ -412,17 +452,18 @@ address {
   margin-bottom: 50px;
 }
 
-.customers-group{
+.customers-group {
   display: block;
   display: flex;
   justify-content: center;
   gap: 30px;
 }
 
-.link-customers{
+.link-customers {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: var(--anim-main);
 
   width: 170px;
   height: 92px;
@@ -436,8 +477,6 @@ address {
   border: 1px solid var(--accent-bg-color);
 }
 
-
-
 /**
   |============================
   | footer
@@ -445,22 +484,20 @@ address {
 */
 
 .footer {
-
   background-color: var(--footer-bg-color);
-  
+
   margin-left: auto;
   margin-right: auto;
   padding-top: 60px;
   padding-bottom: 60px;
 }
 
-.footer-container{
+.footer-container {
   display: flex;
   align-items: baseline;
-  
 }
 
-.footer-address{
+.footer-address {
   margin-right: 70px;
 }
 
@@ -469,7 +506,6 @@ address {
   margin-bottom: 20px;
   color: var(--light-txt-color);
 }
-
 
 .address-text,
 .address-list {
@@ -492,14 +528,16 @@ address {
   margin-bottom: 9px;
 }
 
-.social-footer{
-  margin: 0px;
-  padding: 0px;
-
-  
+.footer-link {
+  transition: var(--anim-main);
 }
 
-.social-caption{
+.social-footer {
+  margin: 0px;
+  padding: 0px;
+}
+
+.social-caption {
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
@@ -509,15 +547,16 @@ address {
   color: var(--light-txt-color);
 }
 
-.social{
+.social {
   display: flex;
   gap: 10px;
 }
 
-.social-link{
+.social-link {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: var(--anim-main);
 
   width: 44px;
   height: 44px;
@@ -526,12 +565,12 @@ address {
   border-radius: 50%;
 }
 
-.social-icon{
-  fill: var(--light-txt-color)
+.social-icon {
+  fill: var(--light-txt-color);
 }
 
 .social-link:hover,
-.social-link:focus{
+.social-link:focus {
   background-color: var(--accent-bg-color);
 }
 
@@ -541,11 +580,10 @@ address {
   |============================
 */
 
-.subcat-section{
+.subcat-section {
   padding-top: 94px;
   padding-bottom: 50px;
 }
-
 
 .portfolio-choice {
   display: flex;
@@ -553,7 +591,6 @@ address {
   gap: 8px;
 
   margin-bottom: 50px;
-  
 }
 
 .button {
@@ -570,6 +607,7 @@ address {
   background: var(--light-grey-bg-color);
   border-radius: 4px;
   cursor: pointer;
+  transition: var(--anim-main);
 }
 
 .subcat .button:hover,
@@ -583,11 +621,12 @@ address {
 
 /* вспливающий теск */
 
-.card-thumb{
+.card-thumb {
   position: relative;
+  overflow: hidden;
 }
 
-.overlay{
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -603,31 +642,28 @@ address {
   padding: 63px 24px;
 
   background-color: rgba(33, 150, 243, 0.9);
-  
-
-  outline: 2px solid red;
+  transition: transform var(--anim-main);
 }
 
-.list-item:hover .overlay{
+.list-item:hover .overlay {
   transform: translateY(0);
 }
 
-.overlay-desc{
+.overlay-desc {
   font-size: 18px;
   line-height: calc(28 / 18);
   letter-spacing: 0.03em;
-  color: var(--light-txt-color)
+  color: var(--light-txt-color);
 }
 
 /* кінець вспливаючого тексту */
 
-.subcat-contant{
+.subcat-contant {
   padding: 20px 24px;
 
   border-right: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   border-left: 1px solid var(--border-color);
-  
 }
 
 .portfolio-list {
@@ -640,13 +676,13 @@ address {
 
 .portfolio-item {
   background: var(--light-bg-color);
-  
+  transition: var(--anim-main);
 }
 
-.portfolio-item:hover{
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+.portfolio-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-
 
 .subcat-title {
   margin-bottom: 4px;
