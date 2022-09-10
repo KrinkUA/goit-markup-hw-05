@@ -130,7 +130,7 @@ address {
 
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -4.5px;
 
   display: block;
   width: 100%;
@@ -266,12 +266,21 @@ address {
   height: 100%;
 
   background: rgba(0, 0, 0, 0.2);
+
+  transition: var(--anim-main);
+}
+
+.backdrop.is-hidden{
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .modal {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   width: 528px;
   height: 581px;
@@ -283,7 +292,24 @@ address {
 }
 
 .modal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  background: var(--light-bg-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
 }
+
+
 
 .feature-content {
   margin: 0;
