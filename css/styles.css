@@ -118,7 +118,7 @@ address {
   padding-bottom: 32px;
   align-items: center;
 
-  transition: var(--anim-main);
+  transition: color var(--anim-main);
 }
 
 .menu-link {
@@ -244,7 +244,7 @@ address {
 
   text-align: center;
   letter-spacing: 0.06em;
-  transition: var(--anim-main);
+  transition: color var(--anim-main);
 
   color: var(--light-txt-color);
   background-color: var(--accent-bg-color);
@@ -252,9 +252,8 @@ address {
 }
 
 .btn:hover,
-.btn:focus{
+.btn:focus {
   color: var(--dark-text-color);
-  
 }
 
 /**
@@ -263,22 +262,20 @@ address {
   |============================
 */
 
-
-
 .backdrop {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
-  transform: translateX(0%);
+
+  /* transform: translateX(0%); */
 
   width: 100%;
   height: 100%;
 
-
   background: rgba(0, 0, 0, 0.2);
 
-  transition: var(--anim-main);
+  transition: opacity var(--anim-main), visibility var(--anim-main);
 }
 
 .backdrop.is-hidden {
@@ -286,7 +283,7 @@ address {
   pointer-events: none;
   visibility: hidden;
 
-  transform: translateX(100%);
+  /* transform: translateX(100%); */
 }
 
 .modal {
@@ -316,10 +313,10 @@ address {
   height: 30px;
   padding: 0;
 
-  transition: var(--anim-main);
+  transition: fill var(--anim-main), background-color var(--anim-main);
 
   fill: var(--dark-text-color);
-  background: var(--light-bg-color);
+  background-color: var(--light-bg-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
@@ -487,7 +484,7 @@ address {
 
   width: 44px;
   height: 44px;
-  transition: var(--anim-main);
+  transition: color var(--anim-main), background-color var(--anim-main);
 
   color: var(--icon-color);
   background-color: var(--icon-bg-color);
@@ -532,7 +529,7 @@ address {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: var(--anim-main);
+  transition: fill var(--anim-main), border var(--anim-main);
 
   width: 170px;
   height: 92px;
@@ -625,7 +622,7 @@ address {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: var(--anim-main);
+  transition: background-color var(--anim-main);
 
   width: 44px;
   height: 44px;
@@ -676,13 +673,13 @@ address {
   background: var(--light-grey-bg-color);
   border-radius: 4px;
   cursor: pointer;
-  transition: var(--anim-main);
+  transition: color var(--anim-main), background-color var(--anim-main), box-shadow var(--anim-main);
 }
 
 .subcat .button:hover,
 .subcat .button:focus {
   color: var(--light-txt-color);
-  background: var(--accent-bg-color);
+  background-color: var(--accent-bg-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
@@ -714,11 +711,12 @@ address {
   transition: transform var(--anim-main);
 }
 
+
 .list-item {
   position: relative;
 }
 
-.list-item:hover .overlay {
+.list-item:hover .overlay{
   transform: translateY(0);
 }
 
@@ -747,12 +745,14 @@ address {
   padding-bottom: 94px;
 }
 
-.portfolio-item {
+.portfolio-link {
+  display: block;
   background: var(--light-bg-color);
-  transition: var(--anim-main);
+  transition: box-shadow var(--anim-main);
 }
 
-.portfolio-item:hover {
+.portfolio-link:hover,
+.portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
