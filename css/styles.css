@@ -268,14 +268,15 @@ address {
   left: 0;
   z-index: 1000;
 
-  /* transform: translateX(0%); */
+  opacity: 1;
+  transform: translateX(0%);
 
   width: 100%;
   height: 100%;
 
   background: rgba(0, 0, 0, 0.2);
-
-  transition: opacity var(--anim-main), visibility var(--anim-main);
+  visibility: visible;
+  transition: opacity var(--anim-main), visibility var(--anim-main), transform var(--anim-main);
 }
 
 .backdrop.is-hidden {
@@ -283,7 +284,7 @@ address {
   pointer-events: none;
   visibility: hidden;
 
-  /* transform: translateX(100%); */
+  transform: translateX(100%);
 }
 
 .modal {
@@ -711,12 +712,11 @@ address {
   transition: transform var(--anim-main);
 }
 
-
 .list-item {
   position: relative;
 }
 
-.list-item:hover .overlay{
+.list-item:hover .overlay {
   transform: translateY(0);
 }
 
@@ -745,8 +745,17 @@ address {
   padding-bottom: 94px;
 }
 
+.portfolio-link:focus .overlay {
+  position: absolut;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-bg-color);
+  transform: translateY(0%);
+}
+
 .portfolio-link {
   display: block;
+
   background: var(--light-bg-color);
   transition: box-shadow var(--anim-main);
 }
